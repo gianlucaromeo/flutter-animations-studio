@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
 import 'package:flutter_animations_studio/ui/widgets/app_checkbox.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
 
 class CheckboxViewModel extends Equatable {
   const CheckboxViewModel({
@@ -22,9 +21,9 @@ class CheckboxViewModel extends Equatable {
   List<Object> get props => [
         label,
         value,
+        onChanged,
       ];
 }
-
 
 class CheckboxAdapter extends StatelessWidget {
   const CheckboxAdapter({

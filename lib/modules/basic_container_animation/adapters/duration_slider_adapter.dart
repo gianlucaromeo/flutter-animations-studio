@@ -29,6 +29,7 @@ class _ViewModel extends Equatable {
         max,
         currentValue,
         appSliderShowType,
+        onChanged,
       ];
 }
 
@@ -37,6 +38,15 @@ class DurationSliderAdapter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = StoreProvider.of<AppState>(context);
+    onChanged(newValue) {
+      store.dispatch(
+        UpdateAnimationDuration(
+          duration: newValue.toInt(),
+        ),
+      );
+    }
+
     return StoreConnector<AppState, _ViewModel>(
       distinct: true,
       onDidChange: (previousViewModel, viewModel) {
@@ -49,13 +59,7 @@ class DurationSliderAdapter extends StatelessWidget {
           max: state.maxDuration.toDouble(),
           currentValue: state.duration.toDouble(),
           appSliderShowType: AppSliderShowType.all,
-          onChanged: (newValue) {
-            store.dispatch(
-              UpdateAnimationDuration(
-                duration: newValue.toInt(),
-              ),
-            );
-          },
+          onChanged: onChanged,
         );
       },
       builder: (context, vm) {
