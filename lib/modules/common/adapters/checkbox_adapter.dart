@@ -25,9 +25,6 @@ class CheckboxViewModel extends Equatable {
       ];
 }
 
-typedef CheckboxViewModelConverter = CheckboxViewModel Function(
-  Store<AppState> store,
-);
 
 class CheckboxAdapter extends StatelessWidget {
   const CheckboxAdapter({
@@ -35,7 +32,7 @@ class CheckboxAdapter extends StatelessWidget {
     required this.converter,
   }) : super(key: key);
 
-  final CheckboxViewModelConverter converter;
+  final StoreConverter<AppState, CheckboxViewModel> converter;
 
   @override
   Widget build(BuildContext context) {
