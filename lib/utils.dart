@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const animatedContainerSize = 75.0;
+
 const alignments = [
   [Alignment.topLeft, Icons.vertical_align_top_outlined],
   [Alignment.topCenter, Icons.vertical_align_top_outlined],

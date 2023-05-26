@@ -3,6 +3,7 @@ import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/extensions.dart';
+import 'package:flutter_animations_studio/utils.dart';
 
 class BasicContainerAnimationPreview extends StatefulWidget {
   const BasicContainerAnimationPreview({
@@ -87,10 +88,9 @@ class _BasicContainerAnimationPreviewState
     super.dispose();
   }
 
-  static const containerSize = 75.0;
   static const basePadding = 12.0;
-  static const containerPadding = containerSize + basePadding;
-  static const alignmentDotSize = containerSize / 10.0;
+  static const containerPadding = animatedContainerSize + basePadding;
+  static const alignmentDotSize = animatedContainerSize / 10.0;
 
   Matrix4 _transform() {
     var matrix4 = Matrix4.identity();
@@ -114,8 +114,8 @@ class _BasicContainerAnimationPreviewState
   Widget build(BuildContext context) {
     _resetController();
     return SizedBox(
-      height: containerSize * 3 + containerPadding,
-      width: containerSize * 3 + containerPadding,
+      height: animatedContainerSize * 3 + containerPadding,
+      width: animatedContainerSize * 3 + containerPadding,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -126,8 +126,8 @@ class _BasicContainerAnimationPreviewState
               /// ORIGINAL POSITION - EMPTY CONTAINER
               if (widget.showOriginalPosition)
                 Container(
-                  width: containerSize,
-                  height: containerSize,
+                  width: animatedContainerSize,
+                  height: animatedContainerSize,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Colors.grey,
@@ -137,8 +137,8 @@ class _BasicContainerAnimationPreviewState
 
               /// ANIMATED CONTAINER
               SizedBox(
-                width: containerSize,
-                height: containerSize,
+                width: animatedContainerSize,
+                height: animatedContainerSize,
                 child: AnimatedBuilder(
                   animation: animationController,
                   builder: (context, child) {
@@ -146,8 +146,8 @@ class _BasicContainerAnimationPreviewState
                       alignment: alignment,
                       transform: _transform(),
                       child: Container(
-                        width: containerSize,
-                        height: containerSize,
+                        width: animatedContainerSize,
+                        height: animatedContainerSize,
                         decoration: BoxDecoration(
                           // TODO Change with a linear gradient
                           color: Theme.of(context).colorScheme.primary,
@@ -161,8 +161,8 @@ class _BasicContainerAnimationPreviewState
               /// ALIGNMENT DOT
               if (widget.showAlignmentDot)
                 Positioned(
-                  width: containerSize,
-                  height: containerSize,
+                  width: animatedContainerSize,
+                  height: animatedContainerSize,
                   top: alignment.isTop
                       ? (alignmentDotSize / 2.0) * alignment.vOffset
                       : null,

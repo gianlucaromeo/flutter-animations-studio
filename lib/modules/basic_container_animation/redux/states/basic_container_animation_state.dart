@@ -18,8 +18,8 @@ class BasicContainerAnimationState extends Equatable {
 
   factory BasicContainerAnimationState.initial() {
     return BasicContainerAnimationState(
-      showOriginalPosition: false,
-      showAlignmentDot: false,
+      showOriginalPosition: true,
+      showAlignmentDot: true,
       minDuration: 200,
       maxDuration: 5000,
       duration: 2000,
