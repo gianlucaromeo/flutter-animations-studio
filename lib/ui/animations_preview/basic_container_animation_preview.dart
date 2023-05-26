@@ -113,13 +113,9 @@ class _BasicContainerAnimationPreviewState
   @override
   Widget build(BuildContext context) {
     _resetController();
-    return Container(
+    return SizedBox(
       height: containerSize * 3 + containerPadding,
       width: containerSize * 3 + containerPadding,
-      decoration: BoxDecoration(
-          border: Border.all(
-        color: Colors.red,
-      )),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
