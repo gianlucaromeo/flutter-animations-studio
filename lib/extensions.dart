@@ -52,6 +52,38 @@ extension PaddingFromListDouble on List<double> {
   }
 }
 
+extension AlignmentUtils on Alignment {
+  /* Vertical */
+  bool get isTop => y == -1.0;
+  bool get isVerticalCenter => y == 0.0;
+  bool get isBottom => y == 1.0;
+
+  /* Horizontal */
+  bool get isLeft => x == -1.0;
+  bool get isHorizontalCenter => x == 0.0;
+  bool get isRight => x == 1.0;
+
+  double get vOffset {
+    return y;
+
+    // OR
+    if (isTop) return -1.0; // y
+    if (isVerticalCenter) return 0.0; // y
+    if (isBottom) return 1.0; // y
+    return 1.0;
+  }
+
+  double get hOffset {
+    return x;
+
+    // OR
+    if (isLeft) return -1.0; // x
+    if (isHorizontalCenter) return 0.0; // x
+    if (isRight) return 1.0; // x
+    return 1.0;
+  }
+}
+
 extension ThemeFromContext on BuildContext {
   // UTILS
   ThemeData get theme => Theme.of(this);
