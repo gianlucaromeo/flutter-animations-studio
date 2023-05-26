@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux/actions/update_animation_duration.dart';
@@ -49,9 +47,6 @@ class DurationSliderAdapter extends StatelessWidget {
 
     return StoreConnector<AppState, _ViewModel>(
       distinct: true,
-      onDidChange: (previousViewModel, viewModel) {
-        log("[DidChange] DurationSliderAdapter");
-      },
       converter: (store) {
         final state = store.state.basicContainerAnimationState!;
         return _ViewModel(

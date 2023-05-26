@@ -42,16 +42,30 @@ extension PaddingFromListDouble on List<double> {
     // TODO Add exception
     return EdgeInsets.zero;
   }
+
+  get verticalHorizontal {
+    if (length == 2) {
+      return EdgeInsets.symmetric(vertical: this[0], horizontal: this[1]);
+    }
+    // TODO Add exception
+    return EdgeInsets.zero;
+  }
 }
 
 extension ThemeFromContext on BuildContext {
   // UTILS
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
+  ColorScheme get colorScheme => theme.colorScheme;
 
   // TEXT THEME'S STYLES
   TextStyle get titleLarge => textTheme.titleLarge!;
 
   // APP'S STYLES
   TextStyle? get tileTitle => textTheme.titleSmall;
+  TextStyle? get appAccordionTitle =>
+      tileTitle?.copyWith(fontWeight: FontWeight.bold);
+
+  // APP'S COLOR SCHEME: SECONDARY
+  Color get dropdownMenuColor => colorScheme.secondary;
 }

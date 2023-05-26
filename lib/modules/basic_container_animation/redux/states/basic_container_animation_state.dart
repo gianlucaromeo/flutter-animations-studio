@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter_animations_studio/models/app_curve.dart';
 import 'package:flutter_animations_studio/models/rotation.dart';
 
 class BasicContainerAnimationState extends Equatable {
@@ -12,19 +13,21 @@ class BasicContainerAnimationState extends Equatable {
     required this.maxDuration,
     required this.duration,
     required this.reverse,
+    required this.appCurve,
   });
 
   factory BasicContainerAnimationState.initial() {
-    return const BasicContainerAnimationState(
+    return BasicContainerAnimationState(
       showOriginalPosition: false,
       showAlignmentDot: false,
       minDuration: 200,
       maxDuration: 5000,
       duration: 2000,
-      xRotation: Rotation(),
-      yRotation: Rotation(),
-      zRotation: Rotation(rotate: true),
+      xRotation: const Rotation(),
+      yRotation: const Rotation(),
+      zRotation: const Rotation(rotate: true),
       reverse: false,
+      appCurve: AppCurves.linear.appCurve,
     );
   }
 
@@ -41,6 +44,8 @@ class BasicContainerAnimationState extends Equatable {
 
   final bool reverse;
 
+  final AppCurve appCurve;
+
   BasicContainerAnimationState copyWith({
     bool? showOriginalPosition,
     bool? showAlignmentDot,
@@ -51,6 +56,7 @@ class BasicContainerAnimationState extends Equatable {
     int? maxDuration,
     int? duration,
     bool? reverse,
+    AppCurve? appCurve,
   }) {
     return BasicContainerAnimationState(
       showOriginalPosition: showOriginalPosition ?? this.showOriginalPosition,
@@ -62,6 +68,7 @@ class BasicContainerAnimationState extends Equatable {
       maxDuration: maxDuration ?? this.maxDuration,
       duration: duration ?? this.duration,
       reverse: reverse ?? this.reverse,
+      appCurve: appCurve ?? this.appCurve,
     );
   }
 
@@ -76,5 +83,6 @@ class BasicContainerAnimationState extends Equatable {
         maxDuration,
         duration,
         reverse,
+        appCurve,
       ];
 }

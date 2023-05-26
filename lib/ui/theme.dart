@@ -36,7 +36,7 @@ const _appColorScheme = ColorScheme(
   brightness: Brightness.dark,
   primary: _AppColors.purple,
   onPrimary: _AppColors.white,
-  secondary: Colors.red, // TODO
+  secondary: _AppColors.grey70, // Dropdown
   onSecondary: Colors.green, // TODO
   error: _AppColors.red,
   onError: Colors.orange, // TODO
@@ -48,13 +48,13 @@ const _appColorScheme = ColorScheme(
 
 const _scaffoldBackgroundColor = _AppColors.dark21;
 
-const _appBarTheme = AppBarTheme(
+final _appBarTheme = AppBarTheme(
   backgroundColor: _AppColors.dark27,
   elevation: 0.0,
-  shape: Border(
+  shape: const Border(
     bottom: appBorderSide,
   ),
-  titleTextStyle: TextStyle(
+  titleTextStyle: _createTextStyle(
     color: _AppColors.white,
     letterSpacing: 0.6,
     fontSize: 14.0,
@@ -80,6 +80,14 @@ final _appCheckboxThemeData = CheckboxThemeData(
   }),
 );
 
+class AppBorderRadius {
+  static BorderRadius get small => const BorderRadius.all(Radius.circular(4.0));
+  static BorderRadius get medium => const BorderRadius.all(Radius.circular(18.0));
+  static BorderRadius get large => const BorderRadius.all(Radius.circular(24.0));
+
+  static BorderRadius custom(double radius) =>
+      BorderRadius.all(Radius.circular(radius));
+}
 
 /// TEXT STYLE
 
@@ -88,19 +96,23 @@ const _appFontWeight = FontWeight.normal;
 
 TextStyle _createTextStyle({
   required double fontSize,
+  Color? color,
+  double? letterSpacing,
   String? fontFamily,
   FontWeight? fontWeight,
 }) {
   return TextStyle(
     fontSize: fontSize,
-    letterSpacing: 0.2,
+    color: color,
+    letterSpacing: 0.3,
     fontFamily: fontFamily ?? _appFontFamily,
     fontWeight: fontWeight ?? _appFontWeight,
   );
 }
 
 TextTheme _appTextTheme = TextTheme(
-  /// TITLE LARGE (headline6): Checkbox
+  /// TITLE LARGE (headline6):
+  /// [Checkbox, Accordion Title, ]
   titleLarge: _createTextStyle(
     fontSize: 12.0,
   ),

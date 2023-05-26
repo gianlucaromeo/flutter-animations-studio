@@ -14,6 +14,7 @@ class BasicContainerAnimationPreview extends StatefulWidget {
     this.rotateY = false,
     this.rotateZ = true,
     this.reverse = false,
+    this.curve = Curves.linear,
   }) : super(key: key);
 
   final int duration;
@@ -26,6 +27,8 @@ class BasicContainerAnimationPreview extends StatefulWidget {
 
   final bool reverse;
 
+  final Curve curve;
+
   @override
   State<BasicContainerAnimationPreview> createState() =>
       _BasicContainerAnimationPreviewState();
@@ -34,31 +37,48 @@ class BasicContainerAnimationPreview extends StatefulWidget {
 class _BasicContainerAnimationPreviewState
     extends State<BasicContainerAnimationPreview>
     with TickerProviderStateMixin {
+
   late Animation<double> animation;
   late AnimationController animationController;
 
   Alignment alignment = Alignment.bottomLeft;
 
-  late int _duration;
+  @override
+  void didUpdateWidget(covariant BasicContainerAnimationPreview oldWidget) {
+    if (widget.curve != oldWidget.curve) {
+      _resetAnimation();
+    }
+  }
+
+  Animation<double> _createAnimation() {
+    return Tween<double>(begin: 0, end: 2 * pi)
+        .chain(CurveTween(curve: widget.curve))
+        .animate(animationController);
+  }
+
+  _resetAnimation() {
+    dev.log("[_resetAnimation]");
+    animation = _createAnimation();
+    animationController.reset();
+    animationController.repeat(reverse: widget.reverse);
+  }
 
   _resetController() {
     dev.log("[_BasicContainerAnimationPreviewState] _resetController");
-    _duration = widget.duration;
-    animationController.duration = _duration.milliseconds;
+    animationController.duration = widget.duration.milliseconds;
     animationController.repeat(reverse: widget.reverse);
   }
 
   @override
   void initState() {
     super.initState();
-    _duration = widget.duration;
+
     animationController = AnimationController(
       vsync: this,
-      duration: _duration.milliseconds,
-    );
-    animation =
-        Tween<double>(begin: 0, end: 2 * pi).animate(animationController);
-    animationController.repeat(reverse: widget.reverse);
+      duration: widget.duration.milliseconds,
+    )..repeat(reverse: widget.reverse);
+
+    animation = _createAnimation();
   }
 
   @override
