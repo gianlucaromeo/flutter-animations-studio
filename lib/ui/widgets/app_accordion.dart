@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/extensions.dart';
-import 'package:flutter_animations_studio/ui/theme.dart';
 
 class AppAccordion extends StatelessWidget {
   const AppAccordion({

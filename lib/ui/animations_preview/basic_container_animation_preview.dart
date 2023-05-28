@@ -16,6 +16,7 @@ class BasicContainerAnimationPreview extends StatefulWidget {
     this.rotateZ = true,
     this.reverse = false,
     this.curve = Curves.linear,
+    this.alignment = Alignment.bottomRight,
   }) : super(key: key);
 
   final int duration;
@@ -30,6 +31,8 @@ class BasicContainerAnimationPreview extends StatefulWidget {
 
   final Curve curve;
 
+  final Alignment alignment;
+
   @override
   State<BasicContainerAnimationPreview> createState() =>
       _BasicContainerAnimationPreviewState();
@@ -41,8 +44,6 @@ class _BasicContainerAnimationPreviewState
 
   late Animation<double> animation;
   late AnimationController animationController;
-
-  Alignment alignment = Alignment.bottomLeft;
 
   @override
   void didUpdateWidget(covariant BasicContainerAnimationPreview oldWidget) {
@@ -91,6 +92,7 @@ class _BasicContainerAnimationPreviewState
   static const basePadding = 12.0;
   static const containerPadding = animatedContainerSize + basePadding;
   static const alignmentDotSize = animatedContainerSize / 10.0;
+  static const halfAlignmentDotSize = alignmentDotSize / 2.0;
 
   Matrix4 _transform() {
     var matrix4 = Matrix4.identity();
@@ -143,7 +145,7 @@ class _BasicContainerAnimationPreviewState
                   animation: animationController,
                   builder: (context, child) {
                     return Transform(
-                      alignment: alignment,
+                      alignment: widget.alignment,
                       transform: _transform(),
                       child: Container(
                         width: animatedContainerSize,
@@ -163,22 +165,22 @@ class _BasicContainerAnimationPreviewState
                 Positioned(
                   width: animatedContainerSize,
                   height: animatedContainerSize,
-                  top: alignment.isTop
-                      ? (alignmentDotSize / 2.0) * alignment.vOffset
+                  top: widget.alignment.isTop
+                      ? - halfAlignmentDotSize
                       : null,
-                  bottom: alignment.isBottom
-                      ? -1.0 * (alignmentDotSize / 2.0) * alignment.vOffset
+                  bottom: widget.alignment.isBottom
+                      ? - halfAlignmentDotSize
                       : null,
-                  right: alignment.isRight
-                      ? -1.0 * (alignmentDotSize / 2.0) * alignment.hOffset
+                  right: widget.alignment.isRight
+                      ? - halfAlignmentDotSize
                       : null,
-                  left: alignment.isLeft
-                      ? (alignmentDotSize / 2.0) * alignment.hOffset
+                  left: widget.alignment.isLeft
+                      ? - halfAlignmentDotSize
                       : null,
                   child: AnimatedAlign(
-                    duration: 500.milliseconds,
-                    curve: Curves.easeOut,
-                    alignment: alignment,
+                    duration: 350.milliseconds,
+                    curve: Curves.easeOutQuint,
+                    alignment: widget.alignment,
                     child: Container(
                       width: alignmentDotSize,
                       height: alignmentDotSize,

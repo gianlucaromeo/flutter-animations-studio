@@ -36,8 +36,9 @@ const _appColorScheme = ColorScheme(
   brightness: Brightness.dark,
   primary: _AppColors.purple,
   onPrimary: _AppColors.white,
-  secondary: _AppColors.grey70, // Dropdown
+  secondary: _AppColors.grey70, // Dropdown,
   onSecondary: Colors.green, // TODO
+  tertiary: _AppColors.grey157, // Alignment Picker's Dot's Border,
   error: _AppColors.red,
   onError: Colors.orange, // TODO
   background: _AppColors.dark21,
@@ -111,9 +112,9 @@ TextStyle _createTextStyle({
 }
 
 TextTheme _appTextTheme = TextTheme(
-  /// TITLE LARGE (headline6):
-  /// [Checkbox, Accordion Title, ]
-  titleLarge: _createTextStyle(
+  /// TITLE MEDIUM (subtitle1):
+  /// [Checkbox, Dropdown, ]
+  titleMedium: _createTextStyle(
     fontSize: 12.0,
   ),
 );

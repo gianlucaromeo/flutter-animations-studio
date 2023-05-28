@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/alignment_picker_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/animation_preview_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/curves_dropdown_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/duration_slider_adapter.dart';
@@ -45,6 +46,16 @@ class BasicContainerAnimationPage extends StatelessWidget {
               initiallyExpanded: true,
               expandedBody: [
                 CurvesDropdownAdapter(),
+              ],
+            ),
+          ),
+          /// ALIGNMENT
+          PanelTile(
+            child: AppAccordion(
+              title: "Alignment",
+              initiallyExpanded: true,
+              expandedBody: [
+                AlignmentPickerAdapter(),
               ],
             ),
           ),

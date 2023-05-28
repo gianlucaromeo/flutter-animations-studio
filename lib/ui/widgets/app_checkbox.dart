@@ -46,7 +46,7 @@ class _AppCheckboxState extends State<AppCheckbox> {
         ),
         Text(
           widget.label,
-          style: context.titleLarge.copyWith(
+          style: context.checkboxTextStyle!.copyWith(
             fontWeight: _currentValue ? FontWeight.bold : FontWeight.normal,
           ),
         ),

@@ -16,6 +16,7 @@ class _ViewModel extends Equatable {
     required this.rotateZ,
     required this.reverse,
     required this.appCurve,
+    required this.alignment,
   });
 
   final int duration;
@@ -30,6 +31,8 @@ class _ViewModel extends Equatable {
 
   final AppCurve appCurve;
 
+  final Alignment alignment;
+
   @override
   List<Object> get props => [
         duration,
@@ -40,6 +43,7 @@ class _ViewModel extends Equatable {
         rotateZ,
         reverse,
         appCurve,
+        alignment,
       ];
 }
 
@@ -61,6 +65,7 @@ class BasicContainerAnimationPreviewAdapter extends StatelessWidget {
         rotateZ: store.state.basicContainerAnimationState!.zRotation.rotate,
         reverse: store.state.basicContainerAnimationState!.reverse,
         appCurve: store.state.basicContainerAnimationState!.appCurve,
+        alignment: store.state.basicContainerAnimationState!.alignment,
       ),
       builder: (context, vm) {
         return BasicContainerAnimationPreview(
@@ -72,6 +77,7 @@ class BasicContainerAnimationPreviewAdapter extends StatelessWidget {
           rotateZ: vm.rotateZ,
           reverse: vm.reverse,
           curve: vm.appCurve.curve,
+          alignment: vm.alignment,
         );
       },
     );

@@ -13,3 +13,28 @@ const alignments = [
   [Alignment.bottomCenter, Icons.vertical_align_bottom_outlined],
   [Alignment.bottomRight, Icons.vertical_align_bottom_outlined],
 ];
+
+const appAlignments = [
+  Alignment.topLeft,
+  Alignment.topCenter,
+  Alignment.topRight,
+  Alignment.centerLeft,
+  Alignment.center,
+  Alignment.centerRight,
+  Alignment.bottomLeft,
+  Alignment.bottomCenter,
+  Alignment.bottomRight,
+];
+
+Alignment getAlignmentFromName(String name) {
+  if (name == "Top Left") return Alignment.topLeft;
+  if (name == "Top Right") return Alignment.topRight;
+  if (name == "Top Center") return Alignment.topCenter;
+  if (name == "Center Left") return Alignment.centerLeft;
+  if (name == "Center Right") return Alignment.centerRight;
+  if (name == "Center") return Alignment.center;
+  if (name == "Bottom Left") return Alignment.bottomLeft;
+  if (name == "Bottom Right") return Alignment.bottomRight;
+  if (name == "Bottom Center") return Alignment.bottomCenter;
+  throw Exception("Cannot detect the correct alignment.");
+}

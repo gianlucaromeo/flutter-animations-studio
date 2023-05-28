@@ -32,6 +32,9 @@ extension PaddingFromDouble on double {
   get all => EdgeInsets.all(this);
   get horizontal => EdgeInsets.symmetric(horizontal: this);
   get onlyBottom => EdgeInsets.only(bottom: this);
+  get onlyTop => EdgeInsets.only(top: this);
+  get onlyRight => EdgeInsets.only(right: this);
+  get onlyLeft => EdgeInsets.only(left: this);
 }
 
 extension PaddingFromListDouble on List<double> {
@@ -63,6 +66,16 @@ extension AlignmentUtils on Alignment {
   bool get isHorizontalCenter => x == 0.0;
   bool get isRight => x == 1.0;
 
+  bool get isTopLeft => isTop && isLeft;
+  bool get isTopCenter => isTop && isHorizontalCenter;
+  bool get isTopRight => isTop && isRight;
+  bool get isCenterLeft => isVerticalCenter && isLeft;
+  bool get isCenter => isVerticalCenter && isHorizontalCenter;
+  bool get isCenterRight => isVerticalCenter && isRight;
+  bool get isBottomLeft => isBottom && isLeft;
+  bool get isBottomCenter => isBottom && isHorizontalCenter;
+  bool get isBottomRight => isBottom && isRight;
+
   double get vOffset {
     return y;
 
@@ -82,6 +95,19 @@ extension AlignmentUtils on Alignment {
     if (isRight) return 1.0; // x
     return 1.0;
   }
+
+  String get name {
+    if (isTopLeft) return "Top Left";
+    if (isTopCenter) return "Top Center";
+    if (isTopRight) return "Top Right";
+    if (isCenterLeft) return "Center Left";
+    if (isCenter) return "Center";
+    if (isCenterRight) return "Center Right";
+    if (isBottomLeft) return "Bottom Left";
+    if (isBottomCenter) return "Bottom Center";
+    if (isBottomRight) return "Bottom Right";
+    throw Exception("Cannot detect the correct alignment.");
+  }
 }
 
 extension ThemeFromContext on BuildContext {
@@ -97,7 +123,12 @@ extension ThemeFromContext on BuildContext {
   TextStyle? get tileTitle => textTheme.titleSmall;
   TextStyle? get appAccordionTitle =>
       tileTitle?.copyWith(fontWeight: FontWeight.bold);
+  TextStyle? get dropdownTextStyle => textTheme.titleMedium;
+  TextStyle? get checkboxTextStyle => textTheme.titleMedium;
 
   // APP'S COLOR SCHEME: SECONDARY
   Color get dropdownMenuColor => colorScheme.secondary;
+
+  // APP'S COLOR SCHEME: TERTIARY
+  Color get alignmentPickerDot => colorScheme.tertiary;
 }

@@ -7,7 +7,9 @@ class AppDropdown<T> extends StatelessWidget {
     Key? key,
     required this.options,
     required this.currentOption,
+    this.padding = const EdgeInsets.symmetric(horizontal: 10.0),
     this.onChanged,
+    this.isExpanded = true,
   }) : super(key: key) {
     assert(
       options.contains(currentOption),
@@ -21,10 +23,13 @@ class AppDropdown<T> extends StatelessWidget {
   final T currentOption;
   final void Function(T?)? onChanged;
 
+  final EdgeInsets padding;
+  final bool isExpanded;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: 10.0.horizontal,
+      padding: padding,
       child: Container(
         decoration: BoxDecoration(
           color: context.dropdownMenuColor,
@@ -39,16 +44,15 @@ class AppDropdown<T> extends StatelessWidget {
                   value: option,
                   child: Text(
                     option.toString(),
-                    style: context.tileTitle,
                   ),
                 );
               },
             ).toList(),
+            style: context.dropdownTextStyle,
             onChanged: onChanged,
-            isExpanded: true,
+            isExpanded: isExpanded,
             dropdownColor: context.dropdownMenuColor,
             menuMaxHeight: 300.0,
-            style: context.tileTitle,
             padding: [8.0, 10.0].verticalHorizontal,
             elevation: 0,
             isDense: true,

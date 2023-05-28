@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/app/app_store.dart';
 import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux/reducers/update_alignment_reducer.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux/reducers/update_curve_reducer.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux/reducers/update_duration_reducer.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux/reducers/update_reverse_reducer.dart';
@@ -25,6 +26,7 @@ void main() {
       updateZRotationReducer,
       updateReverseReducer,
       updateCurveReducer,
+      updateAlignmentReducer,
     ]),
     initialState: AppState.initial(),
   );
