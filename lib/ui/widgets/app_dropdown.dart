@@ -53,7 +53,7 @@ class AppDropdown<T> extends StatelessWidget {
             isExpanded: isExpanded,
             dropdownColor: context.dropdownMenuColor,
             menuMaxHeight: 300.0,
-            padding: [8.0, 10.0].verticalHorizontal,
+            padding: [4.0, 10.0].verticalHorizontal,
             elevation: 0,
             isDense: true,
           ),

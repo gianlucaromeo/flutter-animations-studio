@@ -109,8 +109,7 @@ class AlignmentPicker extends StatelessWidget {
                   onAlignmentTap?.call(getAlignmentFromName(newAlignment!));
                 }
               },
-              padding: 20.0.onlyLeft,
-              isExpanded: false,
+              padding: 25.0.onlyLeft,
             ),
           ),
         ],
