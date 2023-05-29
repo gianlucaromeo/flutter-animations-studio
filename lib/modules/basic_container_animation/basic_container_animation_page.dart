@@ -15,7 +15,7 @@ import 'package:flutter_animations_studio/ui/panels/code_preview_panel.dart';
 import 'package:flutter_animations_studio/ui/panels/configuration_panel.dart';
 import 'package:flutter_animations_studio/ui/panels/controller_panel.dart';
 import 'package:flutter_animations_studio/ui/widgets/app_accordion.dart';
-import 'package:flutter_animations_studio/ui/widgets/panel_tile.dart';
+import 'package:flutter_animations_studio/ui/widgets/app_panel_tile.dart';
 
 
 class BasicContainerAnimationPage extends StatelessWidget {
@@ -28,7 +28,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
       configurationPanel: ConfigurationPanel(
         panelTiles: [
           /// ROTATION
-          PanelTile(
+          AppPanelTile(
             child: AppAccordion(
               title: "Rotation",
               initiallyExpanded: true,
@@ -40,7 +40,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
             ),
           ),
           /// CURVES
-          PanelTile(
+          AppPanelTile(
             child: AppAccordion(
               title: "Curve",
               initiallyExpanded: true,
@@ -50,7 +50,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
             ),
           ),
           /// ALIGNMENT
-          PanelTile(
+          AppPanelTile(
             child: AppAccordion(
               title: "Alignment",
               initiallyExpanded: true,
@@ -70,7 +70,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
       ),
       controllerPanel: ControllerPanel(
         panelTiles: [
-          PanelTile(
+          AppPanelTile(
             child: AppAccordion(
               title: "Duration (ms)",
               initiallyExpanded: true,
@@ -79,7 +79,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
               ],
             ),
           ),
-          PanelTile(
+          AppPanelTile(
             child: AppAccordion(
               title: "Reverse",
               initiallyExpanded: true,

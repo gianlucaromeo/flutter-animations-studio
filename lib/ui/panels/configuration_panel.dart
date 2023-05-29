@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/panel_tile.dart';
+import '../widgets/app_panel_tile.dart';
 
 class ConfigurationPanel extends StatelessWidget {
   const ConfigurationPanel({
@@ -8,7 +8,7 @@ class ConfigurationPanel extends StatelessWidget {
     required this.panelTiles,
   }) : super(key: key);
 
-  final List<PanelTile> panelTiles;
+  final List<AppPanelTile> panelTiles;
 
   @override
   Widget build(BuildContext context) {
