@@ -74,3 +74,22 @@ enum AppCurves {
 
   final AppCurve appCurve;
 }
+
+extension PreviousAndNext on AppCurve {
+  AppCurve get previous {
+    const appCurves = AppCurves.values;
+    int currentIndex = appCurves.firstWhere((appCurves) => appCurves.appCurve == this).index;
+    int previousIndex = currentIndex == 0
+        ? appCurves.length - 1
+        : currentIndex - 1;
+    return appCurves[previousIndex].appCurve;
+  }
+  AppCurve get next {
+    const appCurves = AppCurves.values;
+    int currentIndex = appCurves.firstWhere((appCurves) => appCurves.appCurve == this).index;
+    int nextIndex = currentIndex == appCurves.length - 1
+        ? 0
+        : currentIndex + 1;
+    return appCurves[nextIndex].appCurve;
+  }
+}

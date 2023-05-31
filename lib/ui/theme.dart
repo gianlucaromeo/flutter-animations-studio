@@ -27,7 +27,7 @@ class _AppColors {
   static const Color red = Color.fromRGBO(255, 101, 101, 1);
   static const Color dark27 = Color.fromRGBO(27, 27, 27, 1);
   static const Color dark21 = Color.fromRGBO(21, 21, 21, 1);
-  static const Color grey70 =  Color.fromRGBO(70, 70, 70, 1);
+  static const Color grey51 =  Color.fromRGBO(51, 51, 51, 1);
   static const Color grey157 =  Color.fromRGBO(157, 157, 157, 1);
   static const Color grey166 =  Color.fromRGBO(166, 166, 166, 1);
 }
@@ -36,7 +36,7 @@ const _appColorScheme = ColorScheme(
   brightness: Brightness.dark,
   primary: _AppColors.purple,
   onPrimary: _AppColors.white,
-  secondary: _AppColors.grey70, // Dropdown,
+  secondary: _AppColors.grey51, // Dropdown,
   onSecondary: Colors.green, // TODO
   tertiary: _AppColors.grey157, // Alignment Picker's Dot's Border,
   error: _AppColors.red,

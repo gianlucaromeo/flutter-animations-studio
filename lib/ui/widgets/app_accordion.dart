@@ -16,7 +16,12 @@ class AppAccordion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: context.theme.copyWith(dividerColor: Colors.transparent),
+      data: context.theme.copyWith(
+          dividerColor: Colors.transparent,
+          listTileTheme: ListTileTheme.of(context).copyWith(
+            dense: true,
+
+          )),
       child: ExpansionTile(
         tilePadding: [0.0, 10.0].verticalHorizontal,
         childrenPadding: [4.0, 0.0, 4.0, 12.0].fromLTRB,

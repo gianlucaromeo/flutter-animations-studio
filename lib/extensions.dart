@@ -31,6 +31,7 @@ extension DurationFromInt on int {
 extension PaddingFromDouble on double {
   get all => EdgeInsets.all(this);
   get horizontal => EdgeInsets.symmetric(horizontal: this);
+  get vertical => EdgeInsets.symmetric(vertical: this);
   get onlyBottom => EdgeInsets.only(bottom: this);
   get onlyTop => EdgeInsets.only(top: this);
   get onlyRight => EdgeInsets.only(right: this);

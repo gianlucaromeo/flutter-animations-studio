@@ -34,6 +34,9 @@ class AppDropdown<T> extends StatelessWidget {
         decoration: BoxDecoration(
           color: context.dropdownMenuColor,
           borderRadius: AppBorderRadius.small,
+          border: Border.all(
+            width: appBorderSide.width,
+          ),
         ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -42,8 +45,12 @@ class AppDropdown<T> extends StatelessWidget {
               (option) {
                 return DropdownMenuItem(
                   value: option,
+                  alignment: Alignment.center,
                   child: Text(
-                    option.toString(),
+                    option.toString().camelCaseToSpacedTitleCase,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 );
               },
@@ -53,7 +60,7 @@ class AppDropdown<T> extends StatelessWidget {
             isExpanded: isExpanded,
             dropdownColor: context.dropdownMenuColor,
             menuMaxHeight: 300.0,
-            padding: [4.0, 10.0].verticalHorizontal,
+            padding: [5.0, 10.0].verticalHorizontal,
             elevation: 0,
             isDense: true,
           ),

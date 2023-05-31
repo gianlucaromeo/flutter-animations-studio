@@ -44,6 +44,7 @@ class CurvesDropdownAdapter extends StatelessWidget {
     }
 
     return StoreConnector<AppState, _ViewModel>(
+      distinct: true,
       converter: (store) => _ViewModel(
         options: AppCurves.values.map((curve) => curve.name).toList(),
         currentOption: store.state.basicContainerAnimationState!.appCurve.name,

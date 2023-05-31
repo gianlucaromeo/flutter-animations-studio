@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/alignment_picker_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/animation_preview_adapter.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/curve_preview_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/curves_dropdown_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/duration_slider_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/adapters/reverse_checkbox_adapter.dart';
@@ -27,6 +28,17 @@ class BasicContainerAnimationPage extends StatelessWidget {
       title: "Basic Container Animation",
       configurationPanel: ConfigurationPanel(
         panelTiles: [
+          /// CURVES
+          AppPanelTile(
+            child: AppAccordion(
+              title: "Curve",
+              initiallyExpanded: true,
+              expandedBody: [
+                CurvesDropdownAdapter(),
+                CurvePreviewAdapter(),
+              ],
+            ),
+          ),
           /// ROTATION
           AppPanelTile(
             child: AppAccordion(
@@ -36,16 +48,6 @@ class BasicContainerAnimationPage extends StatelessWidget {
                 RotateXCheckboxAdapter(),
                 RotateYCheckboxAdapter(),
                 RotateZCheckboxAdapter(),
-              ],
-            ),
-          ),
-          /// CURVES
-          AppPanelTile(
-            child: AppAccordion(
-              title: "Curve",
-              initiallyExpanded: true,
-              expandedBody: [
-                CurvesDropdownAdapter(),
               ],
             ),
           ),

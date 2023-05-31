@@ -17,6 +17,7 @@ class AppSlider extends StatefulWidget {
     required this.currentValue,
     required this.appSliderShowType,
     required this.onChanged,
+    this.valueType,
   }) : super(key: key);
 
   final double min;
@@ -25,12 +26,21 @@ class AppSlider extends StatefulWidget {
   final AppSliderShowType appSliderShowType;
   final Function(double) onChanged;
 
+  final String? valueType; // Es.: "ms"
+
   @override
   State<AppSlider> createState() => _AppSliderState();
 }
 
 class _AppSliderState extends State<AppSlider> {
   late double _currentValue;
+
+  String get _currentValueToText {
+    if (widget.valueType?.isNotEmpty == true) {
+      return "${widget.currentValue} ${widget.valueType}";
+    }
+    return widget.currentValue.toString();
+  }
 
   @override
   void initState() {
@@ -53,6 +63,7 @@ class _AppSliderState extends State<AppSlider> {
             value: _currentValue,
             min: widget.min,
             max: widget.max,
+            divisions: (widget.max - widget.min) ~/ 5,
             onChanged: (newValue) {
               widget.onChanged.call(newValue);
               setState(() {
@@ -74,7 +85,7 @@ class _AppSliderState extends State<AppSlider> {
                 ),
               ),
               Text(
-                widget.currentValue.toString(),
+                _currentValueToText, // Es.: "1500 ms"
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),

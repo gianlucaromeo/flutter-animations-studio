@@ -64,6 +64,7 @@ class DurationSliderAdapter extends StatelessWidget {
           currentValue: vm.currentValue,
           onChanged: vm.onChanged,
           appSliderShowType: AppSliderShowType.all,
+          valueType: "ms",
         );
       },
     );
