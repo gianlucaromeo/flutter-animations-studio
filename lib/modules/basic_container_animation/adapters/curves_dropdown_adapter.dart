@@ -23,8 +23,6 @@ class _ViewModel extends Equatable {
     currentOption,
     onChanged,
   ];
-
-
 }
 
 class CurvesDropdownAdapter extends StatelessWidget {

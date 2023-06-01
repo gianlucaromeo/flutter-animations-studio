@@ -18,7 +18,6 @@ import 'package:flutter_animations_studio/ui/panels/controller_panel.dart';
 import 'package:flutter_animations_studio/ui/widgets/app_accordion.dart';
 import 'package:flutter_animations_studio/ui/widgets/app_panel_tile.dart';
 
-
 class BasicContainerAnimationPage extends StatelessWidget {
   const BasicContainerAnimationPage({Key? key}) : super(key: key);
 
@@ -39,6 +38,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
               ],
             ),
           ),
+
           /// ROTATION
           AppPanelTile(
             child: AppAccordion(
@@ -51,6 +51,7 @@ class BasicContainerAnimationPage extends StatelessWidget {
               ],
             ),
           ),
+
           /// ALIGNMENT
           AppPanelTile(
             child: AppAccordion(

@@ -84,6 +84,7 @@ extension PreviousAndNext on AppCurve {
         : currentIndex - 1;
     return appCurves[previousIndex].appCurve;
   }
+
   AppCurve get next {
     const appCurves = AppCurves.values;
     int currentIndex = appCurves.firstWhere((appCurves) => appCurves.appCurve == this).index;
