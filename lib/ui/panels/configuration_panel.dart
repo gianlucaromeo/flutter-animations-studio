@@ -13,7 +13,7 @@ class ConfigurationPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280,
+      width: 320.0,
       height: double.infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
