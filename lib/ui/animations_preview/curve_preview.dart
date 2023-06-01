@@ -233,10 +233,12 @@ class _CurveDemonstrationChart extends StatelessWidget {
                   width: _chartWidth,
                   height: _chartHeight,
                   top: _chartHeight,
-                  child: CustomPaint(
-                    painter: _CurvePainter(
-                      curve: curve,
-                      color: context.colorScheme.primary,
+                  child: RepaintBoundary(
+                    child: CustomPaint(
+                      painter: _CurvePainter(
+                        curve: curve,
+                        color: context.colorScheme.primary,
+                      ),
                     ),
                   ),
                 ),
@@ -283,7 +285,6 @@ class _CurvePainter extends CustomPainter {
     var paint = Paint();
     paint.color = color;
     paint.style = PaintingStyle.stroke;
-
     const circleSize = 0.5;
     var y = 0.0;
     for (double x = 0.0; x < _baseChartWidth; x++) {
@@ -296,6 +297,6 @@ class _CurvePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
+    return (oldDelegate as _CurvePainter).curve != curve;
   }
 }
