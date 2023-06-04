@@ -201,7 +201,7 @@ class _CurveDemonstrationChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final borderSide = BorderSide(
       width: 1.7,
-      color: context.colorScheme.tertiary,
+      color: context.colorScheme.secondary,
     );
 
     return Row(
@@ -228,7 +228,7 @@ class _CurveDemonstrationChart extends StatelessWidget {
                     child: CustomPaint(
                       painter: _CurvePainter(
                         curve: curve,
-                        color: context.colorScheme.secondary,
+                        color: context.colorScheme.tertiary,
                       ),
                     ),
                   ),

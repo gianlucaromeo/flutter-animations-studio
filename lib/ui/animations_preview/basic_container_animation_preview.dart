@@ -120,7 +120,7 @@ class _BasicContainerAnimationPreviewState
       height: animatedContainerSize * 3 + containerPadding,
       width: animatedContainerSize * 3 + containerPadding,
       decoration: BoxDecoration(
-        color: context.colorScheme.secondary,
+        color: context.colorScheme.surface,
         borderRadius: AppBorderRadius.small,
       ),
       child: Column(
