@@ -176,7 +176,7 @@ class _ChangeCurveButton extends StatelessWidget {
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: AppBorderRadius.small,
-            side: appBorderSide,
+            //side: appBorderSide,
           ),
           alignment: textFirst ? Alignment.centerRight : Alignment.centerLeft,
           padding: [15.0, 5.0].verticalHorizontal,
@@ -207,9 +207,12 @@ class _CurveDemonstrationChart extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const SizedBox(
+        SizedBox(
           height: _chartHeight,
-          child: Text("x"),
+          child: Text(
+            "x",
+            style: context.curveChartAxisTextStyle,
+          ),
         ),
         4.0.horizontalSpace,
 
@@ -219,6 +222,20 @@ class _CurveDemonstrationChart extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
+                /// BASE CHART
+                SizedBox(
+                  width: _chartWidth,
+                  height: _chartHeight,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        left: borderSide,
+                        bottom: borderSide,
+                      ),
+                    ),
+                  ),
+                ),
+
                 /// CURVE PAINTER
                 Positioned(
                   width: _chartWidth,
@@ -229,20 +246,6 @@ class _CurveDemonstrationChart extends StatelessWidget {
                       painter: _CurvePainter(
                         curve: curve,
                         color: context.colorScheme.tertiary,
-                      ),
-                    ),
-                  ),
-                ),
-
-                /// BASE CHART
-                SizedBox(
-                  width: _chartWidth,
-                  height: _chartHeight,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        left: borderSide,
-                        bottom: borderSide,
                       ),
                     ),
                   ),
@@ -265,9 +268,11 @@ class _CurveDemonstrationChart extends StatelessWidget {
             ),
             4.0.verticalSpace,
 
-            const SizedBox(
+            SizedBox(
               width: _chartWidth,
-              child: Text("t", textAlign: TextAlign.end,),
+              child: Text("t", textAlign: TextAlign.end,
+                style: context.curveChartAxisTextStyle,
+              ),
             ),
           ],
         ),

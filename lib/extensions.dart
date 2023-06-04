@@ -126,6 +126,10 @@ extension ThemeFromContext on BuildContext {
       tileTitle?.copyWith(fontWeight: FontWeight.bold);
   TextStyle? get dropdownTextStyle => textTheme.titleMedium;
   TextStyle? get checkboxTextStyle => textTheme.titleMedium;
+  TextStyle? get curveChartAxisTextStyle => textTheme.titleSmall!.copyWith(
+    color: colorScheme.tertiary,
+  );
+
 
   // APP'S COLOR SCHEME: SECONDARY
   Color get dropdownMenuColor => colorScheme.secondary;
