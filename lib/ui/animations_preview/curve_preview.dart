@@ -5,7 +5,7 @@ import 'package:flutter_animations_studio/extensions.dart';
 import 'package:flutter_animations_studio/models/app_curve.dart';
 import 'package:flutter_animations_studio/ui/theme.dart';
 
-const double _dotSize = 6.0;
+const double _dotSize = 8.0;
 const double _baseChartWidth = 170.0; // (without considering the dot size)
 const double _chartWidth = _baseChartWidth + _dotSize;
 const double _baseChartHeight = 40.0; // (without considering the dot size)
@@ -199,6 +199,11 @@ class _CurveDemonstrationChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final borderSide = BorderSide(
+      width: 1.7,
+      color: context.colorScheme.tertiary,
+    );
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -214,20 +219,6 @@ class _CurveDemonstrationChart extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
-                /// BASE CHART
-                SizedBox(
-                  width: _chartWidth,
-                  height: _chartHeight,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        left: appBorderSide.copyWith(width: 0.7),
-                        bottom: appBorderSide.copyWith(width: 0.7),
-                      ),
-                    ),
-                  ),
-                ),
-
                 /// CURVE PAINTER
                 Positioned(
                   width: _chartWidth,
@@ -237,7 +228,21 @@ class _CurveDemonstrationChart extends StatelessWidget {
                     child: CustomPaint(
                       painter: _CurvePainter(
                         curve: curve,
-                        color: context.colorScheme.primary,
+                        color: context.colorScheme.secondary,
+                      ),
+                    ),
+                  ),
+                ),
+
+                /// BASE CHART
+                SizedBox(
+                  width: _chartWidth,
+                  height: _chartHeight,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        left: borderSide,
+                        bottom: borderSide,
                       ),
                     ),
                   ),
@@ -284,13 +289,11 @@ class _CurvePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
     paint.color = color;
-    paint.style = PaintingStyle.stroke;
-    const circleSize = 0.5;
+    paint.style = PaintingStyle.fill;
+    const circleSize = 1.0;
     var y = 0.0;
     for (double x = 0.0; x < _baseChartWidth; x++) {
-      // FIXME: y = ... -1
-      // Dot is not aligned to the middle of the line but -1 is not correct
-      y = -1 * (curve.transform(x / _baseChartWidth) * _baseChartHeight) - 1;
+      y = -1 * (curve.transform(x / _baseChartWidth) * _baseChartHeight) - 2;
       canvas.drawCircle(Offset(x + 0.5, y), circleSize, paint);
     }
   }
