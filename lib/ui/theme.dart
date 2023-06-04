@@ -67,6 +67,9 @@ final _appCheckboxThemeData = CheckboxThemeData(
   shape: RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(2.0),
   ),
+  overlayColor: MaterialStateProperty.all(Colors.transparent),
+  splashRadius: 0.0,
+  visualDensity: VisualDensity.adaptivePlatformDensity,
   fillColor: MaterialStateProperty.resolveWith((states) {
     if (states.contains(MaterialState.selected)) {
       return _AppColors.grey157;
@@ -76,9 +79,7 @@ final _appCheckboxThemeData = CheckboxThemeData(
     }
     return _AppColors.grey166;
   }),
-  checkColor: MaterialStateProperty.resolveWith((states) {
-    return _AppColors.white;
-  }),
+  checkColor: MaterialStateProperty.all(_AppColors.white),
 );
 
 class AppBorderRadius {

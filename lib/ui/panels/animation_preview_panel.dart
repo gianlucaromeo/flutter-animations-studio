@@ -18,13 +18,14 @@ class AnimationPreviewPanel extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: previewOptions,
             ),
-            //const Spacer(),
+            35.0.verticalSpace,
             animationPreview,
             //const Spacer(),
           ],

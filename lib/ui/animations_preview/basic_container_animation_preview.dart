@@ -3,6 +3,7 @@ import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/extensions.dart';
+import 'package:flutter_animations_studio/ui/theme.dart';
 import 'package:flutter_animations_studio/utils.dart';
 
 class BasicContainerAnimationPreview extends StatefulWidget {
@@ -115,9 +116,13 @@ class _BasicContainerAnimationPreviewState
   @override
   Widget build(BuildContext context) {
     _resetController();
-    return SizedBox(
+    return Container(
       height: animatedContainerSize * 3 + containerPadding,
       width: animatedContainerSize * 3 + containerPadding,
+      decoration: BoxDecoration(
+        color: context.colorScheme.secondary,
+        borderRadius: AppBorderRadius.small,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -132,7 +137,7 @@ class _BasicContainerAnimationPreviewState
                   height: animatedContainerSize,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.grey,
+                      color: context.colorScheme.onPrimary,
                     ),
                   ),
                 ),
@@ -151,8 +156,7 @@ class _BasicContainerAnimationPreviewState
                         width: animatedContainerSize,
                         height: animatedContainerSize,
                         decoration: BoxDecoration(
-                          // TODO Change with a linear gradient
-                          color: Theme.of(context).colorScheme.primary,
+                          color: context.colorScheme.primary,
                         ),
                       ),
                     );
