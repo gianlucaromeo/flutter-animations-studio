@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
+import 'package:flutter_animations_studio/modules/app/app_state.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_show_original_position.dart';
 import 'package:flutter_animations_studio/modules/common/adapters/checkbox_adapter.dart';
 import 'package:flutter_redux/flutter_redux.dart';

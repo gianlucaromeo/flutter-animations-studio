@@ -4,7 +4,7 @@ import 'package:flutter_animations_studio/models/app_curve.dart';
 import 'package:flutter_animations_studio/ui/animations_preview/basic_container_animation_preview.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
-import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
+import 'package:flutter_animations_studio/modules/app/app_state.dart';
 
 class _ViewModel extends Equatable {
   const _ViewModel({

@@ -4,7 +4,7 @@ import 'package:flutter_animations_studio/modules/basic_container_animation/redu
 import 'package:flutter_animations_studio/ui/widgets/app_slider.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
-import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
+import 'package:flutter_animations_studio/modules/app/app_state.dart';
 
 class _ViewModel extends Equatable {
   const _ViewModel({

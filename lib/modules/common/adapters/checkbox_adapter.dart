@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/log.dart';
-import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
+import 'package:flutter_animations_studio/modules/app/app_state.dart';
 import 'package:flutter_animations_studio/ui/widgets/app_checkbox.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 

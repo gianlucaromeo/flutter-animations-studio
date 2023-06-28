@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/app/app_store.dart';
-import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
-import 'package:flutter_animations_studio/modules/basic_container_animation/basic_container_animation.dart';
+import 'package:flutter_animations_studio/modules/app/app_state.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/redux_components.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/basic_container_animation_page.dart';
 import 'package:flutter_animations_studio/ui/theme.dart';
 import 'package:flutter_redux/flutter_redux.dart';
