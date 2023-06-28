@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_studio/modules/basic_container_animation/redux/actions/update_animation_duration.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_animation_duration.dart';
 import 'package:flutter_animations_studio/ui/widgets/app_slider.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -37,6 +37,7 @@ class DurationSliderAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = StoreProvider.of<AppState>(context);
+
     onChanged(newValue) {
       store.dispatch(
         UpdateAnimationDuration(

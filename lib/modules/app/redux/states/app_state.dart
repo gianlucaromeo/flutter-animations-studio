@@ -1,4 +1,4 @@
-import 'package:flutter_animations_studio/modules/basic_container_animation/redux/states/basic_container_animation_state.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/basic_container_animation_state.dart';
 
 class AppState {
   final BasicContainerAnimationState? basicContainerAnimationState;

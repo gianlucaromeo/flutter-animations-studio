@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
-import 'package:flutter_animations_studio/modules/basic_container_animation/redux/actions/update_alignment.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_alignment.dart';
 import 'package:flutter_animations_studio/ui/widgets/alignment_picker.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -27,6 +27,7 @@ class AlignmentPickerAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = StoreProvider.of<AppState>(context);
+
     onTap(newAlignment) {
       store.dispatch(
         UpdateAlignment(alignment: newAlignment),

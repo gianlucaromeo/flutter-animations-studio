@@ -1,0 +1,9 @@
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_alignment.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_animation_duration.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_curve.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_reverse.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_show_alignment_dot.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_show_original_position.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_x_rotation.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_y_rotation.dart';
+export 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_z_rotation.dart';

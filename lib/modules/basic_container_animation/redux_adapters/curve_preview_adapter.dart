@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/models/app_curve.dart';
 import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
-import 'package:flutter_animations_studio/modules/basic_container_animation/redux/actions/update_curve.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_curve.dart';
 import 'package:flutter_animations_studio/ui/animations_preview/curve_preview.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -34,11 +34,13 @@ class CurvePreviewAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = StoreProvider.of<AppState>(context);
+
     updateAppCurve(AppCurve appCurve) {
       store.dispatch(
         UpdateCurve(appCurve: appCurve),
       );
     }
+
     return StoreConnector<AppState, _ViewModel>(
       distinct: true,
       converter: (store) {

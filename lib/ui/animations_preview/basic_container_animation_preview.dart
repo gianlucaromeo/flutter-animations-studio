@@ -1,8 +1,8 @@
 import 'dart:math';
-import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/extensions.dart';
+import 'package:flutter_animations_studio/log.dart';
 import 'package:flutter_animations_studio/ui/theme.dart';
 import 'package:flutter_animations_studio/utils.dart';
 
@@ -60,14 +60,14 @@ class _BasicContainerAnimationPreviewState
   }
 
   _resetAnimation() {
-    dev.log("[_resetAnimation]");
+    Log.info("[_resetAnimation]");
     animation = _createAnimation();
     animationController.reset();
     animationController.repeat(reverse: widget.reverse);
   }
 
   _resetController() {
-    dev.log("[_BasicContainerAnimationPreviewState] _resetController");
+    Log.info("[_BasicContainerAnimationPreviewState] _resetController");
     animationController.duration = widget.duration.milliseconds;
     animationController.repeat(reverse: widget.reverse);
   }

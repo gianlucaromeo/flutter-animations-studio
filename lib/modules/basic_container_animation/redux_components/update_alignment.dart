@@ -1,13 +1,20 @@
-import 'dart:developer';
-
+import 'package:flutter/material.dart';
+import 'package:flutter_animations_studio/log.dart';
 import 'package:flutter_animations_studio/modules/app/redux/states/app_state.dart';
-import 'package:flutter_animations_studio/modules/basic_container_animation/redux/actions/update_alignment.dart';
 import 'package:redux/redux.dart';
 
+class UpdateAlignment {
+  const UpdateAlignment({
+    required this.alignment,
+  });
+
+  final Alignment alignment;
+}
+
 final updateAlignmentReducer = TypedReducer<AppState, UpdateAlignment>(
-  (state, action) {
+      (state, action) {
     if (action.alignment != state.basicContainerAnimationState!.alignment) {
-      log("[updateAlignmentReducer]");
+      Log.info("[updateAlignmentReducer]");
       return state.copyWith(
         basicContainerAnimationState:
           state.basicContainerAnimationState!.copyWith(
