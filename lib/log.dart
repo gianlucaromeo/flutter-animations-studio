@@ -24,8 +24,8 @@ class Log {
   static void fatal(String message, {String name = ""}) {
     if (kDebugMode) {
       log(
-        "[LOG.FATAL] $message",
-        name: name,
+        message,
+        name: "FATAL",
         level: _approximateSeverity(fatalLevel),
       );
     }
@@ -39,8 +39,8 @@ class Log {
   static void error(String message, Object? error, {String name = ""}) {
     if (kDebugMode) {
       log(
-        "[LOG.ERROR] $message",
-        name: name,
+        message,
+        name: "ERROR",
         error: error,
         level: _approximateSeverity(errorLevel),
       );
@@ -53,8 +53,8 @@ class Log {
   static void warn(String message, {String name = ""}) {
     if (kDebugMode) {
       log(
-        "[LOG.WARN] $message",
-        name: name,
+        message,
+        name: "WARN",
         level: _approximateSeverity(warnLevel),
       );
     }
@@ -66,8 +66,8 @@ class Log {
   static void info(String message, {String name = ""}) {
     if (kDebugMode) {
       log(
-        "[LOG.INFO] $message",
-        name: name,
+        message,
+        name: "INFO",
         level: _approximateSeverity(infoLevel),
       );
     }
@@ -78,8 +78,8 @@ class Log {
   static void debug(String message, {String name = ""}) {
     if (kDebugMode) {
       log(
-        "[LOG.DEBUG] $message",
-        name: name,
+        message,
+        name: "DEBUG",
         level: _approximateSeverity(debugLevel),
       );
     }
@@ -88,8 +88,8 @@ class Log {
   static void trace(String message, StackTrace? stackTrace, {String name = ""}) {
     if (kDebugMode) {
       log(
-        "[LOG.TRACE] $message",
-        name: name,
+        message,
+        name: "TRACE",
         stackTrace: stackTrace,
         level: _approximateSeverity(traceLevel),
       );
