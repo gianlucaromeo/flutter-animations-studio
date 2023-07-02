@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_studio/ui/theme.dart';
 
 import '../widgets/app_panel_tile.dart';
 
@@ -17,12 +18,7 @@ class ConfigurationPanel extends StatelessWidget {
       height: double.infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
-        border: const Border(
-          right: BorderSide(
-            color: Colors.white,
-            width: 0.3,
-          ),
-        ),
+        borderRadius: AppBorderRadius.medium,
       ),
       child: Column(
         children: panelTiles.map((panelTile) => Flexible(child: panelTile)).toList(),

@@ -127,13 +127,7 @@ extension ThemeFromContext on BuildContext {
   TextStyle? get dropdownTextStyle => textTheme.titleMedium;
   TextStyle? get checkboxTextStyle => textTheme.titleMedium;
   TextStyle? get curveChartAxisTextStyle => textTheme.titleSmall!.copyWith(
-    color: colorScheme.tertiary,
+    color: colorScheme.onPrimary,
   );
 
-
-  // APP'S COLOR SCHEME: SECONDARY
-  Color get dropdownMenuColor => colorScheme.secondary;
-
-  // APP'S COLOR SCHEME: TERTIARY
-  Color get alignmentPickerDot => colorScheme.tertiary;
 }

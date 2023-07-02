@@ -17,9 +17,7 @@ class ControllerPanel extends StatelessWidget {
       width: 500,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
-        border: const Border(
-          top: appBorderSide,
-        ),
+        borderRadius: AppBorderRadius.medium,
       ),
       child: SingleChildScrollView(
         child: Column(

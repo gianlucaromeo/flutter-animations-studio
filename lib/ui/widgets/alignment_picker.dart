@@ -31,13 +31,8 @@ class _AlignmentPickerDot extends StatelessWidget {
         decoration: BoxDecoration(
           color: isSelected
               ? context.colorScheme.primary
-              : context.colorScheme.background,
+              : context.colorScheme.secondary,
           borderRadius: BorderRadius.circular(50),
-          border: Border.all(
-            color: isSelected
-                ? context.colorScheme.onPrimary
-                : context.alignmentPickerDot,
-          ),
         ),
       ),
     );

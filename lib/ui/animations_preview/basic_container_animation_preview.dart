@@ -120,8 +120,8 @@ class _BasicContainerAnimationPreviewState
       height: animatedContainerSize * 3 + containerPadding,
       width: animatedContainerSize * 3 + containerPadding,
       decoration: BoxDecoration(
-        color: context.colorScheme.surface,
-        borderRadius: AppBorderRadius.small,
+        color: context.colorScheme.surface.withOpacity(0.2),
+        borderRadius: AppBorderRadius.medium,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -139,6 +139,7 @@ class _BasicContainerAnimationPreviewState
                     border: Border.all(
                       color: context.colorScheme.onPrimary,
                     ),
+                    borderRadius: AppBorderRadius.medium,
                   ),
                 ),
 
@@ -157,6 +158,7 @@ class _BasicContainerAnimationPreviewState
                         height: animatedContainerSize,
                         decoration: BoxDecoration(
                           color: context.colorScheme.primary,
+                          borderRadius: AppBorderRadius.medium,
                         ),
                       ),
                     );

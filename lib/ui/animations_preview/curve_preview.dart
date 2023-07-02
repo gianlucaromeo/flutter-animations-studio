@@ -174,8 +174,9 @@ class _ChangeCurveButton extends StatelessWidget {
           ),
         ),
         style: TextButton.styleFrom(
+          backgroundColor: context.colorScheme.secondary,
           shape: RoundedRectangleBorder(
-            borderRadius: AppBorderRadius.small,
+            borderRadius: AppBorderRadius.medium,
             //side: appBorderSide,
           ),
           alignment: textFirst ? Alignment.centerRight : Alignment.centerLeft,
@@ -201,7 +202,7 @@ class _CurveDemonstrationChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final borderSide = BorderSide(
       width: 1.7,
-      color: context.colorScheme.secondary,
+      color: context.colorScheme.onPrimary,
     );
 
     return Row(

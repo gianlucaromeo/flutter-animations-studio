@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 /* GLOBAL */
 
 const appBorderSide = BorderSide(
-  color: _AppColors.grey166,
+  color: _AppColors.border,
   width: 0.3,
 );
 
@@ -22,39 +22,32 @@ ThemeData appThemeData = ThemeData(
 /* PRIVATE */
 
 class _AppColors {
-  static const Color purple = Color.fromRGBO(178, 101, 255, 1);
   static const Color white = Color.fromRGBO(255, 255, 255, 1);
   static const Color red = Color.fromRGBO(255, 101, 101, 1);
-  static const Color dark27 = Color.fromRGBO(27, 27, 27, 1);
-  static const Color dark21 = Color.fromRGBO(21, 21, 21, 1);
-  static const Color grey51 =  Color.fromRGBO(51, 51, 51, 1);
-  static const Color grey157 =  Color.fromRGBO(157, 157, 157, 1);
-  static const Color grey166 =  Color.fromRGBO(166, 166, 166, 1);
+  static const Color border =  Color.fromRGBO(166, 166, 166, 1);
 }
 
 const _appColorScheme = ColorScheme(
   brightness: Brightness.dark,
-  primary: _AppColors.purple,
-  onPrimary: _AppColors.white,
-  secondary: _AppColors.grey51, // Dropdown,
-  onSecondary: Colors.green, // TODO
-  tertiary: _AppColors.grey157, // Alignment Picker's Dot's Border,
+  primary: Color.fromRGBO(181, 201, 154, 1),
+  onPrimary: Color.fromRGBO(200, 200, 200, 1),
+  secondary: Color.fromRGBO(56, 56, 56, 1),
+  onSecondary: Colors.white, // TODO
+  tertiary: Color.fromRGBO(107, 121, 96, 1),
+  onTertiary: Color.fromRGBO(240, 240, 240, 1),
   error: _AppColors.red,
-  onError: Colors.orange, // TODO
-  background: _AppColors.dark21,
+  onError: Colors.white, // TODO
+  background: Color.fromRGBO(21, 21, 21, 1),
   onBackground: _AppColors.white,
-  surface: _AppColors.dark27,
+  surface: Color.fromRGBO(37, 37, 37, 1),
   onSurface: _AppColors.white,
 );
 
-const _scaffoldBackgroundColor = _AppColors.dark21;
+final _scaffoldBackgroundColor = _appColorScheme.background;
 
 final _appBarTheme = AppBarTheme(
-  backgroundColor: _AppColors.dark27,
+  backgroundColor: _appColorScheme.secondary,
   elevation: 0.0,
-  shape: const Border(
-    bottom: appBorderSide,
-  ),
   titleTextStyle: _createTextStyle(
     color: _AppColors.white,
     letterSpacing: 0.6,
@@ -72,20 +65,20 @@ final _appCheckboxThemeData = CheckboxThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   fillColor: MaterialStateProperty.resolveWith((states) {
     if (states.contains(MaterialState.selected)) {
-      return _AppColors.grey157;
+      return _appColorScheme.primary;
     }
     if (states.contains(MaterialState.hovered)) {
       return _appColorScheme.onPrimary;
     }
-    return _AppColors.grey166;
+    return _AppColors.border;
   }),
   checkColor: MaterialStateProperty.all(_AppColors.white),
 );
 
 class AppBorderRadius {
   static BorderRadius get small => const BorderRadius.all(Radius.circular(4.0));
-  static BorderRadius get medium => const BorderRadius.all(Radius.circular(18.0));
-  static BorderRadius get large => const BorderRadius.all(Radius.circular(24.0));
+  static BorderRadius get medium => const BorderRadius.all(Radius.circular(16.0));
+  static BorderRadius get large => const BorderRadius.all(Radius.circular(20.0));
 
   static BorderRadius custom(double radius) =>
       BorderRadius.all(Radius.circular(radius));
@@ -112,10 +105,13 @@ TextStyle _createTextStyle({
   );
 }
 
+const _defaultTextColor = Color.fromRGBO(220, 220, 220, 1.0);
+
 TextTheme _appTextTheme = TextTheme(
   /// TITLE MEDIUM (subtitle1):
   /// [Checkbox, Dropdown, ]
   titleMedium: _createTextStyle(
     fontSize: 12.0,
+    color: _defaultTextColor,
   ),
 );

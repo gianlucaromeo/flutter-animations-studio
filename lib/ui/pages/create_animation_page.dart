@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_studio/extensions.dart';
 import 'package:flutter_animations_studio/ui/panels/animation_preview_panel.dart';
 import 'package:flutter_animations_studio/ui/panels/code_preview_panel.dart';
 import 'package:flutter_animations_studio/ui/panels/configuration_panel.dart';
@@ -26,7 +27,7 @@ class CreateAnimationPage extends StatefulWidget {
 
 class _CreateAnimationPageState extends State<CreateAnimationPage> {
   final minWidth = 1450.0;
-  final minHeight = 800.0;
+  final minHeight = 850.0;
 
   final ScrollController _horizontalController = ScrollController();
   final ScrollController _verticalController = ScrollController();
@@ -43,21 +44,26 @@ class _CreateAnimationPageState extends State<CreateAnimationPage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          widget.configurationPanel,
-          Flexible(
-            flex: 0,
-            child: Column(
-              children: [
-                Expanded(flex: 2, child: widget.animationPreviewPanel),
-                Expanded(child: widget.controllerPanel),
-              ],
+      body: Padding(
+        padding: 25.0.all,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            widget.configurationPanel,
+            25.0.horizontalSpace,
+            Flexible(
+              flex: 0,
+              child: Column(
+                children: [
+                  Expanded(flex: 2, child: widget.animationPreviewPanel),
+                  Expanded(child: widget.controllerPanel),
+                ],
+              ),
             ),
-          ),
-          Expanded(child: widget.codePreviewPanel),
-        ],
+            25.0.horizontalSpace,
+            Expanded(child: widget.codePreviewPanel),
+          ],
+        ),
       ),
     );
 
