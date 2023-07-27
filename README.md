@@ -5,5 +5,5 @@ real-time**. The tool is designed to be fast, easy to use, and intuitive,
 making it perfect for both beginners and experienced developers.
 
 ## Tech Specs
-- Flutter version: 3.10.1
+- SDK: 3.1.0-348.0.dev
 - State management: Redux.
