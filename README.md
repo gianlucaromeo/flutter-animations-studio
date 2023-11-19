@@ -4,13 +4,8 @@
 
 <br>
 <br>
-Flutter Animations Studio is a Flutter app that provides a simple yet 
-powerful tool to create Flutter animations, **generating Dart code in 
-real-time**. The tool is designed to be fast, easy to use, and intuitive, 
-making it perfect for both beginners and experienced developers.
+Flutter Animations Studio is a Flutter app that provides a simple yet powerful tool to create Flutter animations, **generating Dart code in real-time**. The tool is designed to be fast, easy to use, and intuitive, making it perfect for both beginners and experienced developers.<br><br>
 
-<br>
-## Demo (No Code Editor)
-https://github.com/gianlucaromeo/flutter-animations-studio/assets/48991017/1df6bcca-c047-40f3-a9d3-dc6a22f15aa7
 
-[![Demo](https://github.com/gianlucaromeo/flutter-animations-studio/assets/48991017/1df6bcca-c047-40f3-a9d3-dc6a22f15aa7)
+https://github.com/gianlucaromeo/flutter-animations-studio/assets/48991017/33d2f702-58bc-4399-96c0-051e27264eee
+
