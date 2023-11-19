@@ -1,10 +1,17 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-class AppCurve {
+class AppCurve extends Equatable {
   const AppCurve(this.curve, this.name);
 
   final Curve curve;
   final String name;
+
+  @override
+  List<Object?> get props => [
+    curve,
+    name,
+  ];
 }
 
 enum AppCurves {

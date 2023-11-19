@@ -1,4 +1,6 @@
-class Rotation {
+import 'package:equatable/equatable.dart';
+
+class Rotation extends Equatable {
   const Rotation({
     this.rotate = false,
     this.angle = 0.0,
@@ -21,4 +23,10 @@ class Rotation {
   String toString() {
     return "Rotation (angle: $angle, rotate: $rotate)";
   }
+
+  @override
+  List<Object?> get props => [
+    rotate,
+    angle,
+  ];
 }
