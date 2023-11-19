@@ -5,4 +5,4 @@ https://github.com/gianlucaromeo/flutter-animations-studio/assets/48991017/5c18d
 
 
 # Flutter Animations Studio
-Design and animate with ease using Flutter Animations Studio, a Flutter app that generates live Dart code as you create stunning animations. 😉
+Animate with ease using Flutter Animations Studio, a Flutter app that generates live Dart code as you create stunning animations. 😉
