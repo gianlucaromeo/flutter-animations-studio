@@ -1,6 +1,8 @@
 # Flutter Animations Studio
 <br>
 ⚠️ This is a work in progress project.
+
+<br>
 <br>
 Flutter Animations Studio is a Flutter app that provides a simple yet 
 powerful tool to create Flutter animations, **generating Dart code in 
@@ -11,3 +13,6 @@ making it perfect for both beginners and experienced developers.
 ## Demo (No Code Editor)
 https://github.com/gianlucaromeo/flutter-animations-studio/assets/48991017/1df6bcca-c047-40f3-a9d3-dc6a22f15aa7
 
+<video width="320" height="240" controls>
+  <source src="https://github.com/gianlucaromeo/flutter-animations-studio/assets/48991017/1df6bcca-c047-40f3-a9d3-dc6a22f15aa7" type="video/mp4">
+</video>
