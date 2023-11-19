@@ -6,6 +6,7 @@ import 'package:flutter_animations_studio/log.dart';
 import 'package:flutter_animations_studio/ui/theme.dart';
 import 'package:flutter_animations_studio/utils.dart';
 
+
 class BasicContainerAnimationPreview extends StatefulWidget {
   const BasicContainerAnimationPreview({
     Key? key,

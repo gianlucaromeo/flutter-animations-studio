@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations_studio/extensions.dart';
 import 'package:flutter_animations_studio/ui/theme.dart';
 
 class CodePreviewPanel extends StatelessWidget {
-  const CodePreviewPanel({Key? key}) : super(key: key);
+  const CodePreviewPanel({
+    Key? key,
+    required this.appCodeEditor,
+  }) : super(key: key);
+
+  final Widget appCodeEditor;
 
   @override
   Widget build(BuildContext context) {
@@ -15,18 +19,9 @@ class CodePreviewPanel extends StatelessWidget {
         borderRadius: AppBorderRadius.large,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Icon(Icons.warning_amber),
-          12.0.verticalSpace,
-          const Text(
-            "Work in progress",
-          ),
-          12.0.verticalSpace,
-          const Text(
-            "This panel will contain the Dart code of the animation",
-            style: TextStyle(color: Colors.grey),
-          ),
+          Expanded(child: appCodeEditor),
         ],
       ),
     );

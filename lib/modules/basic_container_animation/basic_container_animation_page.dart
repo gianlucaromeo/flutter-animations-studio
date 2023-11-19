@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_adapters/alignment_picker_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_adapters/animation_preview_adapter.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux_adapters/app_code_editor_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_adapters/curve_preview_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_adapters/curves_dropdown_adapter.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_adapters/duration_slider_adapter.dart';
@@ -93,7 +94,9 @@ class BasicContainerAnimationPage extends StatelessWidget {
           ),
         ],
       ),
-      codePreviewPanel: CodePreviewPanel(),
+      codePreviewPanel: CodePreviewPanel(
+        appCodeEditor: AppCodeEditorAdapter(),
+      ),
     );
   }
 }

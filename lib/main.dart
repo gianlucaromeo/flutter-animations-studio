@@ -3,6 +3,7 @@ import 'package:flutter_animations_studio/modules/app/app_store.dart';
 import 'package:flutter_animations_studio/modules/app/app_state.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/redux_components.dart';
 import 'package:flutter_animations_studio/modules/basic_container_animation/basic_container_animation_page.dart';
+import 'package:flutter_animations_studio/modules/basic_container_animation/redux_components/update_code.dart';
 import 'package:flutter_animations_studio/ui/theme.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -19,9 +20,11 @@ void main() {
       updateReverseReducer,
       updateCurveReducer,
       updateAlignmentReducer,
+      updateCodeReducer, // works everytime an action is dispatched
     ]),
     initialState: AppState.initial(),
   );
+
   runApp(MyApp(store: store));
 }
 
