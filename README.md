@@ -1,6 +1,6 @@
 # Flutter Animations Studio
 <br>
-> ⚠️ This is a work in progress project.
+⚠️ This is a work in progress project.
 <br>
 Flutter Animations Studio is a Flutter app that provides a simple yet 
 powerful tool to create Flutter animations, **generating Dart code in 
