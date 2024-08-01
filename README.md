@@ -2,7 +2,6 @@
 1. [The Project](#1-flutter-animations-studio)
 2. [Demo video](#2-demo-video)
 3. [Architecture](#3-architecture)
-4. [Considerations](#4-considerations)
 
 # 1. Flutter Animations Studio
 Animate with ease using Flutter Animations Studio, a Flutter web-app that generates live Dart code as you create stunning animations. 😉
@@ -31,6 +30,3 @@ A visual representation of the architecture of **FlutterAnimationsStudio** is sh
 <br>
 
 ![FlutterAnimationsStudio Architecture Pattern](https://github.com/user-attachments/assets/9fc4db14-fde3-4f36-a7f4-65df7cf8903a)
-
-# 4. Considerations
-Unfortunately, flutter_redux hasn't been udpated for 2 years. For this reason, this project is currently paused.
